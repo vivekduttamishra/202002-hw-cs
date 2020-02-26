@@ -1,0 +1,29 @@
+
+Create a class to model bank account objects
+
+A bank account will have
+
+	name  of the account holder
+	account number
+	balance
+	password
+	interest rate
+
+it should support following operations
+	deposit amount  <--- must be positive
+	withdraw amount <--- must be positive <= balance. must validate using password
+
+	credit interest <--- one month interest at a time using formula
+
+	balance+= balance * rate/1200;
+
+
+
+	show should display account info
+
+	provide way to access/modify
+		name
+		rate
+		blance
+		password etc
+
