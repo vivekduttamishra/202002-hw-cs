@@ -10,6 +10,28 @@ namespace ConceptArchitect.Banking
         private int lastId;
         
         List<BankAccount> accounts = new List<BankAccount>();
+        private List<BankAccount> GetActiveAccounts()
+        {
+            return accounts;
+        }
+        private void AddAccount(BankAccount account)
+        {
+            accounts.Add(account);
+        }
+
+        private void RemoveAccount(BankAccount account)
+        {
+            accounts.Remove(account);
+        }
+
+        private BankAccount GetAccount(int accountNumber)
+        {
+            foreach (var account in accounts)
+                if (account.AccountNumber == accountNumber)
+                    return account;
+
+            return null; //null means no account
+        }
 
         public Bank(string name, double rate)
         {
@@ -25,11 +47,13 @@ namespace ConceptArchitect.Banking
             var account = new BankAccount(accountNumber, customerName, password, amount);
 
             //TODO: step 2.  store the account object in Bank Object
-            accounts.Add(account);
+            AddAccount(account);
 
             //TODO: step 3.  return the account number
             return accountNumber;
         }
+
+        
 
         public double CloseAccount(int accountNumber,string password)
         {
@@ -44,11 +68,13 @@ namespace ConceptArchitect.Banking
                 return double.NaN; //can't runaway without paying the due
 
             //ok to close
-            accounts.Remove(account);
+            RemoveAccount(account);
 
             return account.Balance;
 
         }
+
+        
 
         public void PrintAccountList()
         {
@@ -61,9 +87,11 @@ namespace ConceptArchitect.Banking
         public void CreditInterest()
         {
             //TODO: credit interest to all accounts
-            foreach(var account in accounts)
+            foreach (var account in GetActiveAccounts())
                 account.CreditInterest(rate);
         }
+
+       
 
         public bool Deposit(int accountNumber, int amount)
         {
@@ -108,13 +136,6 @@ namespace ConceptArchitect.Banking
 
         }
 
-        private BankAccount GetAccount(int accountNumber)
-        {
-            foreach (var account in accounts)
-                if (account.AccountNumber == accountNumber)
-                    return account;
-
-            return null; //null means no account
-        }
+        
     }
 }
