@@ -1,0 +1,20 @@
+int [] numbers = new int [10]; //array of 10 integerst
+
+string [] names= {"India","USA","France"}; //array of 3 string with given values
+
+//array size can't change after creation
+
+//to access an array item
+
+names[1]; //-->"USA" index starts from 0
+
+names[3]; //--> throws exception
+
+//to access all items
+
+for(int i=0;i<names.length;i++)
+	Console.WriteLine(names[i]);
+
+//to access all items (option 2)
+foreach( var name in names)
+	Console.WriteLine(name);

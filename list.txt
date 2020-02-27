@@ -1,0 +1,18 @@
+
+List<int> numbers=new List<int>(); //size not defined. it is initally 0.
+
+// we can add multiple items here
+
+for(int i=0;i<10;i++)
+	numbers.Add(i*10); //can keep on dynamically adding new values
+
+// list currently contains { 0, 10 , 20, 30, 40, 50, 60, 70, 80, 90 }
+
+//remove items
+numbers.Remove(40); //removes item 40
+
+numbers.RemoveAt(5) ; //remove item at index 5 -> 60
+
+//accessing a list values
+//same as array!
+
