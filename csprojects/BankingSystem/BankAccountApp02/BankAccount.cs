@@ -13,6 +13,60 @@ namespace BankAccountApp01
         double balance;
         double rate;
 
+
+        public string GetName()
+        {
+            return name;
+        }
+
+        public void SetName(string newName)
+        {
+            if(LastName(name)==LastName(newName))
+                this.name = newName;
+        }
+
+        private string LastName(string name)
+        {
+            var ndx = name.LastIndexOf(" ");
+            if (ndx == -1) //no blank space
+                return ""; //no last name
+            else
+                return name.Substring(ndx + 1);
+        }
+
+        public double GetRate() { return rate; }
+        public void SetRate(double newRate) { rate = newRate; }
+
+
+        public int GetAccountNumber() { return accountNumber; }
+
+        // accountNumber is immutable --> not modifiable
+        //public void SetAccountNumber(int newAccountNumber) { accountNumber = newAccountNumber; }
+
+        public double GetBalance() { return balance; }
+
+        //No SetBalance
+
+        // no get set password
+        //public string GetPassword() { return password; }
+        //public void SetPassword(string newPassword) { password = newPassword; }
+
+        public bool Authenticate(string newPassword)
+        {
+            return password == newPassword;
+        }
+
+        public bool ChangePassword(string oldPassword, string newPassword)
+        {
+            if (Authenticate(oldPassword))
+            {
+                password = newPassword;
+                return true;
+            }
+            else
+                return false;
+        }
+
         public BankAccount(int accountNumber, string name, string password, int balance, int rate)
         {
             this.accountNumber = accountNumber;
@@ -30,7 +84,7 @@ namespace BankAccountApp01
                 return false;//Console.WriteLine("Amount should be positive");
             else if (amount > balance)
                 return false;// Console.WriteLine("Insufficient balance");
-            else if (password != this.password)
+            else if (Authenticate(password))
                 return false;// Console.WriteLine("Invalid credentials");
             else
             {

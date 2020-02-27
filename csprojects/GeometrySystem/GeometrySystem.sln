@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceptArchitect.Geometry",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryApp02", "GeometryApp02\GeometryApp02.csproj", "{52EAA673-4E41-460A-A4A5-BF10BCA0DD6C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeometryApp03", "GeometryApp03\GeometryApp03.csproj", "{9662B506-3014-47BC-8EA3-F7D3955D6309}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{52EAA673-4E41-460A-A4A5-BF10BCA0DD6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52EAA673-4E41-460A-A4A5-BF10BCA0DD6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52EAA673-4E41-460A-A4A5-BF10BCA0DD6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9662B506-3014-47BC-8EA3-F7D3955D6309}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9662B506-3014-47BC-8EA3-F7D3955D6309}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9662B506-3014-47BC-8EA3-F7D3955D6309}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9662B506-3014-47BC-8EA3-F7D3955D6309}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
