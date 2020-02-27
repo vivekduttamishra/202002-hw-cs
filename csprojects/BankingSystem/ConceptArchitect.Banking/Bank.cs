@@ -5,7 +5,7 @@ namespace ConceptArchitect.Banking
 {
     public class Bank
     {
-        private string name;
+        public string Name { get; private set; }
         private double rate;
         private int lastId;
         
@@ -35,7 +35,7 @@ namespace ConceptArchitect.Banking
 
         public Bank(string name, double rate)
         {
-            this.name = name;
+            this.Name = name;
             this.rate = rate;
             
         }
@@ -53,7 +53,23 @@ namespace ConceptArchitect.Banking
             return accountNumber;
         }
 
-        
+        public BankAccount GetAccount(int accountNumber, string password)
+        {
+            var account = GetAccount(accountNumber);
+            if (account == null || !account.Authenticate(password))
+                return null;
+            else
+                return account;
+        }
+
+        public bool Authenticate(int accountNumber, string password)
+        {
+            var account = GetAccount(accountNumber);
+            if (account == null)
+                return false;
+            else
+                return account.Authenticate(password);
+        }
 
         public double CloseAccount(int accountNumber,string password)
         {
