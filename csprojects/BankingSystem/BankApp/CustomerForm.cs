@@ -1,4 +1,4 @@
-﻿using ConceptArchitect.Banking;
+﻿//using ConceptArchitect.Banking;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,7 +16,10 @@ namespace BankApp
         int accountNumber;
         string password;
         string userName;
-        public CustomerForm(Bank bank,int accountNumber, string password, string userName)
+
+        public Form1 ParentWindow { get; internal set; }
+
+        public CustomerForm(int accountNumber, string password, string userName)
         {
             InitializeComponent();
             this.accountNumber = accountNumber;
@@ -29,6 +32,13 @@ namespace BankApp
         private void CustomerForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void CustomerForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            ParentWindow.Dispose();
+            new Form1().Show();
         }
     }
 }

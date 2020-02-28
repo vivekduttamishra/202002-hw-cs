@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel;
 
 namespace ConceptArchitect.Banking
 {
-    public class Bank
+    [ServiceBehavior(InstanceContextMode =InstanceContextMode.Single)]
+    public class Bank : IBankingCustomer,IBankingManager
     {
         public string Name { get; private set; }
         private double rate;
@@ -18,13 +20,13 @@ namespace ConceptArchitect.Banking
 
 
 
-        public int OpenAccount(string customerName, string password, int amount,string accountType="SavingsAccount")
+        public int OpenAccount(string customerName, string password, int amount, string accountType = "SavingsAccount")
         {
             //TODO: step 1. create BankAccount object
-           
+
             BankAccount account = null;
 
-            switch(accountType)
+            switch (accountType)
             {
                 case "SavingsAccount":
                     account = new SavingsAccount(0, customerName, password, amount); break;
@@ -35,16 +37,16 @@ namespace ConceptArchitect.Banking
                 case "OverdraftAccount":
                     account = new OverdraftAccount(0, customerName, password, amount); break;
             }
-            
+
 
             //TODO: step 2.  store the account object in Bank Object
             return AccountRepository.AddAccount(account);
 
-            
+
         }
         public BankAccount GetAccount(int accountNumber, string password)
         {
-            var account =AccountRepository.GetAccount(accountNumber);
+            var account = AccountRepository.GetAccount(accountNumber);
             account.Authenticate(password);
             return account;
 
@@ -53,12 +55,13 @@ namespace ConceptArchitect.Banking
             //else
             //    return account;
         }
-        public void Authenticate(int accountNumber, string password)
+        public string Authenticate(int accountNumber, string password)
         {
             var account = AccountRepository.GetAccount(accountNumber);
             account.Authenticate(password);
+            return account.Name;
         }
-        public double CloseAccount(int accountNumber,string password)
+        public double CloseAccount(int accountNumber, string password)
         {
             var account = AccountRepository.GetAccount(accountNumber);
             account.Authenticate(password);
@@ -76,8 +79,8 @@ namespace ConceptArchitect.Banking
         {
             //TODO: print info about all accounts
             foreach (var account in AccountRepository.GetActiveAccounts())
-                Console.WriteLine("{0}#{1}\t{2}\t{3}",account.GetType().Name, account.AccountNumber,account.Name, account.Balance);
-            
+                Console.WriteLine("{0}#{1}\t{2}\t{3}", account.GetType().Name, account.AccountNumber, account.Name, account.Balance);
+
         }
 
         public void CreditInterest()
@@ -93,15 +96,15 @@ namespace ConceptArchitect.Banking
 
             account.Deposit(amount);
             AccountRepository.UpdateAccount(account);
-            
 
-         
+
+
         }
         public void Transfer(int source, int amount, string password, int target)
         {
             //step1 Locate source account
             BankAccount s = AccountRepository.GetAccount(source);
-            
+
             BankAccount t = AccountRepository.GetAccount(target);
 
 
@@ -112,15 +115,18 @@ namespace ConceptArchitect.Banking
             AccountRepository.UpdateAccount(t);
 
         }
-        public void Withdraw(int accountNumber  , double amount, string password)
+        public void Withdraw(int accountNumber, double amount, string password)
         {
             //TODO: step 1. Locate the BankAccount object with given account number
             BankAccount account = AccountRepository.GetAccount(accountNumber);
-           account.Withdraw(amount,password);
+            account.Withdraw(amount, password);
             AccountRepository.UpdateAccount(account);
 
         }
 
-        
+        public List<BankAccount> GetAccountList()
+        {
+            return AccountRepository.GetActiveAccounts();
+        }
     }
 }

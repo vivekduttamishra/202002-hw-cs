@@ -67,7 +67,7 @@ namespace ConceptArchitect.Banking
         }
 
         //static int lastId=0
-        public BankAccount(int accountNumber, string name, string password, int balance)
+        public BankAccount(int accountNumber, string name, string password, double balance)
         {
             //lastId++;
             this.accountNumber = accountNumber; //lastId

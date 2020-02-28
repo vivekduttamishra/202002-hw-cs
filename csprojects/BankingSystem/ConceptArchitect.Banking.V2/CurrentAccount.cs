@@ -9,7 +9,7 @@ namespace ConceptArchitect.Banking
     [Serializable]
     public class CurrentAccount : BankAccount
     {
-        public CurrentAccount(int accountNumber, string name, string password, int balance) 
+        public CurrentAccount(int accountNumber, string name, string password, double balance) 
             : base(accountNumber, name, password, balance)
         {
         }

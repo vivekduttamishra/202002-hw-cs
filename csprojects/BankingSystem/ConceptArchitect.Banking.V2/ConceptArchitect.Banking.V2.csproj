@@ -32,7 +32,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,10 +52,12 @@
     <Compile Include="Class2.cs" />
     <Compile Include="CurrentAccount.cs" />
     <Compile Include="IAccountStore.cs" />
+    <Compile Include="IBank.cs" />
     <Compile Include="InMemoryAccountRepository.cs" />
     <Compile Include="OverdraftAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SavingsAccount.cs" />
+    <Compile Include="SqlAccountRepository.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

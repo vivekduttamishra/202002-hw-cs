@@ -49,6 +49,7 @@
             this.Controls.Add(this.headerLabel);
             this.Name = "CustomerForm";
             this.Text = "CustomerForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CustomerForm_FormClosing);
             this.Load += new System.EventHandler(this.CustomerForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -9,8 +9,8 @@ namespace ConceptArchitect.Banking
     [Serializable]
     public class OverdraftAccount : BankAccount
     {
-        public double OdLimit { get; private set; }
-        public OverdraftAccount(int accountNumber, string name, string password, int balance) : base(accountNumber, name, password, balance)
+        public double OdLimit { get; internal set; }
+        public OverdraftAccount(int accountNumber, string name, string password, double balance) : base(accountNumber, name, password, balance)
         {
             AdjustOdLimit();
         }

@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConceptArchitect.Banking.V2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankManagementConsoleApp", "BankManagementConsoleApp\BankManagementConsoleApp.csproj", "{A74856EA-3D0E-4A03-AA5E-06760462134E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdoNETDemo", "AdoNETDemo\AdoNETDemo.csproj", "{E3A546C8-F740-4ACC-A935-391DEC2E0AF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankingServiceHostApp", "BankingServiceHostApp\BankingServiceHostApp.csproj", "{40CF73AE-EE51-4F26-9B20-C59E7FC455FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{A74856EA-3D0E-4A03-AA5E-06760462134E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A74856EA-3D0E-4A03-AA5E-06760462134E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A74856EA-3D0E-4A03-AA5E-06760462134E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A546C8-F740-4ACC-A935-391DEC2E0AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A546C8-F740-4ACC-A935-391DEC2E0AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A546C8-F740-4ACC-A935-391DEC2E0AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A546C8-F740-4ACC-A935-391DEC2E0AF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40CF73AE-EE51-4F26-9B20-C59E7FC455FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40CF73AE-EE51-4F26-9B20-C59E7FC455FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40CF73AE-EE51-4F26-9B20-C59E7FC455FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40CF73AE-EE51-4F26-9B20-C59E7FC455FD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
