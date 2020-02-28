@@ -3,11 +3,12 @@
 namespace ConceptArchitect.Banking
 {
     //internal  by default
+    [Serializable]
     public abstract  class BankAccount
     {
 
         
-        string password;       
+        internal string password;       
         
         string name;
         public string Name
@@ -28,6 +29,7 @@ namespace ConceptArchitect.Banking
         {
             get { return accountNumber; }
             //no set
+            internal set { accountNumber = value; }
         }
 
         protected double balance;

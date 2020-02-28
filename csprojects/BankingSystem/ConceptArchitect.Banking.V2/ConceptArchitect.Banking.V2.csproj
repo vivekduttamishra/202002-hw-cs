@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E3FA5CDC-B914-465E-A268-47D9B2426861}</ProjectGuid>
+    <ProjectGuid>{24B15A7A-C30F-4731-A4A6-2345E936EE05}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ConceptArchitect.Banking</RootNamespace>
-    <AssemblyName>ConceptArchitect.Banking</AssemblyName>
+    <AssemblyName>ConceptArchitect.Banking.V2</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,11 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountRepository.cs" />
+    <Compile Include="AccountStore.cs" />
     <Compile Include="Bank.cs" />
     <Compile Include="BankAccount.cs" />
     <Compile Include="BankingExceptions.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Class2.cs" />
     <Compile Include="CurrentAccount.cs" />
+    <Compile Include="IAccountStore.cs" />
+    <Compile Include="InMemoryAccountRepository.cs" />
     <Compile Include="OverdraftAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SavingsAccount.cs" />

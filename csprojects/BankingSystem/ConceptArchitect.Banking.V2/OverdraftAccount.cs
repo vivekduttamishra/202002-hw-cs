@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConceptArchitect.Banking
 {
+    [Serializable]
     public class OverdraftAccount : BankAccount
     {
         public double OdLimit { get; private set; }

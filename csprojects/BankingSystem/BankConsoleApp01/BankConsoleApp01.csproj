@@ -53,9 +53,9 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConceptArchitect.Banking\ConceptArchitect.Banking.csproj">
-      <Project>{E3FA5CDC-B914-465E-A268-47D9B2426861}</Project>
-      <Name>ConceptArchitect.Banking</Name>
+    <ProjectReference Include="..\ConceptArchitect.Banking.V2\ConceptArchitect.Banking.V2.csproj">
+      <Project>{24b15a7a-c30f-4731-a4a6-2345e936ee05}</Project>
+      <Name>ConceptArchitect.Banking.V2</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
