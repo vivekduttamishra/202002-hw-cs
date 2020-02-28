@@ -3,7 +3,7 @@
 namespace ConceptArchitect.Banking
 {
     //internal  by default
-    public class BankAccount
+    public abstract  class BankAccount
     {
 
         
@@ -29,8 +29,15 @@ namespace ConceptArchitect.Banking
             get { return accountNumber; }
             //no set
         }
-        
-        public double Balance { get; private set; }
+
+        protected double balance;
+
+        public double Balance
+        {
+            get { return balance; }
+            private set { balance = value; }
+        }
+
 
 
         private string LastName(string name)
@@ -70,16 +77,18 @@ namespace ConceptArchitect.Banking
             //this.Rate = rate;
         }
 
-        public void CreditInterest(double rate)
+        public virtual void CreditInterest(double rate)
         {
             Balance += Balance * rate / 1200;
         }
 
-        public bool Withdraw(double amount, string password)
+        public abstract double WithdrawableLimit { get; }
+
+        public virtual bool Withdraw(double amount, string password)
         {
             if (amount <= 0)
                 return false;//Console.WriteLine("Amount should be positive");
-            else if (amount > Balance)
+            else if (amount > WithdrawableLimit)
                 return false;// Console.WriteLine("Insufficient balance");
             else if (!Authenticate(password))
                 return false;// Console.WriteLine("Invalid credentials");
@@ -92,7 +101,7 @@ namespace ConceptArchitect.Banking
 
         }
 
-        public bool Deposit(double amount)
+        public virtual bool Deposit(double amount)
         {
             if (amount <= 0)
                 return false;
@@ -116,8 +125,10 @@ namespace ConceptArchitect.Banking
             //Console.WriteLine("Rate " + Rate);
         }
 
-
+      
 
 
     }
+
+    
 }

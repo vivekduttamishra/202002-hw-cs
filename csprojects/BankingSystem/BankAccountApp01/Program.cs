@@ -22,7 +22,7 @@ namespace BankAccountApp01
             //account.Show();
 
             //Transfer(account, 1000, "wrong", account2);
-            account.TransferTo(account2, 1000, "wrong");
+            //account.TransferTo(account2, 1000, "wrong");
 
             account.Show();
             account2.Show();

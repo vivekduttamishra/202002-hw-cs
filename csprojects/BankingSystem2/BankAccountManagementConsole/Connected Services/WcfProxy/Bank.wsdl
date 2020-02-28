@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Bank" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8000/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8000/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8000/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ConceptArchitect.Banking" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBankingService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_CloseAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CloseAccount" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_CloseAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CloseAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_CreditInterest_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreditInterest" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_CreditInterest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreditInterestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Deposit_InputMessage">
+    <wsdl:part name="parameters" element="tns:Deposit" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Deposit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DepositResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_GetAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccount" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_GetAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_OpenAccount_InputMessage">
+    <wsdl:part name="parameters" element="tns:OpenAccount" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_OpenAccount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OpenAccountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_PrintAccountList_InputMessage">
+    <wsdl:part name="parameters" element="tns:PrintAccountList" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_PrintAccountList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintAccountListResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Transfer_InputMessage">
+    <wsdl:part name="parameters" element="tns:Transfer" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Transfer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TransferResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Withdraw_InputMessage">
+    <wsdl:part name="parameters" element="tns:Withdraw" />
+  </wsdl:message>
+  <wsdl:message name="IBankingService_Withdraw_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WithdrawResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBankingService">
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/Authenticate" message="tns:IBankingService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/AuthenticateResponse" message="tns:IBankingService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/CloseAccount" message="tns:IBankingService_CloseAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/CloseAccountResponse" message="tns:IBankingService_CloseAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreditInterest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/CreditInterest" message="tns:IBankingService_CreditInterest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/CreditInterestResponse" message="tns:IBankingService_CreditInterest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Deposit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/Deposit" message="tns:IBankingService_Deposit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/DepositResponse" message="tns:IBankingService_Deposit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/GetAccount" message="tns:IBankingService_GetAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/GetAccountResponse" message="tns:IBankingService_GetAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenAccount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/OpenAccount" message="tns:IBankingService_OpenAccount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/OpenAccountResponse" message="tns:IBankingService_OpenAccount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintAccountList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/PrintAccountList" message="tns:IBankingService_PrintAccountList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/PrintAccountListResponse" message="tns:IBankingService_PrintAccountList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/Transfer" message="tns:IBankingService_Transfer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/TransferResponse" message="tns:IBankingService_Transfer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Withdraw">
+      <wsdl:input wsaw:Action="http://tempuri.org/IBankingService/Withdraw" message="tns:IBankingService_Withdraw_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IBankingService/WithdrawResponse" message="tns:IBankingService_Withdraw_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBankingService" type="tns:IBankingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authenticate">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseAccount">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/CloseAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreditInterest">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/CreditInterest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Deposit">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/Deposit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAccount">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/GetAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenAccount">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/OpenAccount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintAccountList">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/PrintAccountList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Transfer">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/Transfer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Withdraw">
+      <soap:operation soapAction="http://tempuri.org/IBankingService/Withdraw" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Bank">
+    <wsdl:port name="BasicHttpBinding_IBankingService" binding="tns:BasicHttpBinding_IBankingService">
+      <soap:address location="http://localhost:8000/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

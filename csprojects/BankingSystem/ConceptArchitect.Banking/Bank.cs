@@ -40,11 +40,24 @@ namespace ConceptArchitect.Banking
             
         }
 
-        public int OpenAccount(string customerName, string password, int amount)
+        public int OpenAccount(string customerName, string password, int amount,string accountType="SavingsAccount")
         {
             //TODO: step 1. create BankAccount object
             int accountNumber = ++lastId;  //generate new account number
-            var account = new BankAccount(accountNumber, customerName, password, amount);
+            BankAccount account = null;
+
+            switch(accountType)
+            {
+                case "SavingsAccount":
+                    account = new SavingsAccount(accountNumber, customerName, password, amount); break;
+
+                case "CurrentAccount":
+                    account = new CurrentAccount(accountNumber, customerName, password, amount); break;
+
+                case "OverdraftAccount":
+                    account = new OverdraftAccount(accountNumber, customerName, password, amount); break;
+            }
+            
 
             //TODO: step 2.  store the account object in Bank Object
             AddAccount(account);
